@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'gestion_panier.dart';
 
 class PagePanier extends StatefulWidget {
   const PagePanier({super.key});
@@ -10,14 +11,15 @@ class PagePanier extends StatefulWidget {
 class _PagePanierState extends State<PagePanier> {
   @override
   Widget build(BuildContext context) {
+    final panier = GestionPanier.panier;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Mon Panier"),
       ),
-      body: const Center(
-        child: Text("Chargement du panier..."),
-      ),
+      body: panier.isEmpty
+          ? const Center(child: Text("Votre panier est vide."))
+          : const Center(child: Text("Panier détecté")),
     );
   }
 }
-
