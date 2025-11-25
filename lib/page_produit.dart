@@ -145,7 +145,6 @@ class _PageProduitState extends State<PageProduit> {
 
               const SizedBox(height: 20),
 
-              // ===== BARRE DE RECHERCHE =====
               TextField(
                 decoration: InputDecoration(
                   hintText: "Rechercher une chaussure...",
@@ -171,7 +170,6 @@ class _PageProduitState extends State<PageProduit> {
 
               const SizedBox(height: 15),
 
-              // ===== GRID RESPONSIVE =====
               Expanded(
                 child: LayoutBuilder(
                   builder: (context, constraints) {
@@ -233,7 +231,6 @@ class _PageProduitState extends State<PageProduit> {
 
                               const SizedBox(height: 5),
 
-                              // ===== PRIX =====
                               Text(
                                 "\$${p["prix"]}",
                                 style: const TextStyle(
@@ -244,7 +241,6 @@ class _PageProduitState extends State<PageProduit> {
 
                               const SizedBox(height: 5),
 
-                              // ===== NOTE =====
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
@@ -256,14 +252,13 @@ class _PageProduitState extends State<PageProduit> {
 
                               const SizedBox(height: 10),
 
-                              // ===== BOUTON AJOUTER =====
                               SizedBox(
                                 width: double.infinity,
                                 child: ElevatedButton(
                                   onPressed: () {
                                     GestionPanier.ajouterProduit(p);
 
-                                    setState(() {}); // 👈 MET À JOUR LE BADGE
+                                    setState(() {});
 
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       const SnackBar(content: Text("Ajouté au panier !")),
