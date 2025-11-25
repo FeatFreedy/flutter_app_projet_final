@@ -65,25 +65,24 @@ class _PageConnexionState extends State<PageConnexion> {
               ),
             ),
             const SizedBox(height: 30),
-
+           
             TextField(
               controller: emailController,
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                 labelText: 'Email',
                 border: UnderlineInputBorder(),
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: 20),
 
             TextField(
-              controller: passwordController,
+              controller:passwordController,
               obscureText: true,
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                 labelText: 'Mot De Passe',
                 border: UnderlineInputBorder(),
               ),
             ),
-
             const SizedBox(height: 10),
 
             Align(
@@ -105,6 +104,7 @@ class _PageConnexionState extends State<PageConnexion> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: connecter,
+
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,
                   padding: const EdgeInsets.symmetric(vertical: 14),
@@ -118,7 +118,6 @@ class _PageConnexionState extends State<PageConnexion> {
                 ),
               ),
             ),
-
             const SizedBox(height: 25),
 
             const Text("Vous n'avez pas de compte?"),
