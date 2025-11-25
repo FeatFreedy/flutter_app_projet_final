@@ -85,6 +85,29 @@ class _PageProduitState extends State<PageProduit> {
       "note": 4.9
     },
   ];
+final TextEditingController _ctrlRecherche = TextEditingController();
+  List<Map<String, dynamic>> produitsFiltres = [];
+
+  @override
+  void initState() {
+    super.initState();
+    produitsFiltres = List.from(produits);
+
+    _ctrlRecherche.addListener(() {
+      filtrerProduits(_ctrlRecherche.text);
+    });
+  }
+
+  void filtrerProduits(String query) {
+    final texte = query.toLowerCase();
+
+    setState(() {
+      produitsFiltres = produits.where((p) {
+        return p["titre"].toLowerCase().contains(texte)
+            || p["prix"].toString().contains(texte);
+      }).toList();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -119,7 +142,7 @@ class _PageProduitState extends State<PageProduit> {
                         if (GestionPanier.panier.isNotEmpty)
                           Positioned(
                             right: 0,
-                            top:-5,
+                            top: -5,
                             child: Container(
                               padding: const EdgeInsets.all(4),
                               decoration: const BoxDecoration(
@@ -138,7 +161,6 @@ class _PageProduitState extends State<PageProduit> {
                           ),
                       ],
                     ),
-
                   ),
                 ],
               ),
@@ -146,6 +168,7 @@ class _PageProduitState extends State<PageProduit> {
               const SizedBox(height: 20),
 
               TextField(
+                controller: _ctrlRecherche,
                 decoration: InputDecoration(
                   hintText: "Rechercher une chaussure...",
                   prefixIcon: const Icon(Icons.search),
@@ -188,12 +211,12 @@ class _PageProduitState extends State<PageProduit> {
                         crossAxisSpacing: 20,
                         mainAxisSpacing: 20,
                       ),
-                      itemCount: produits.length,
+                      itemCount: produitsFiltres.length,
                       itemBuilder: (context, index) {
-                        final p = produits[index];
+                        final p = produitsFiltres[index];
 
                         return Container(
-                          padding: const EdgeInsets.fromLTRB(10, 10, 10,8 ),
+                          padding: const EdgeInsets.fromLTRB(10, 10, 10, 8),
                           decoration: BoxDecoration(
                             color: Colors.grey.shade200,
                             borderRadius: BorderRadius.circular(22),
@@ -202,10 +225,9 @@ class _PageProduitState extends State<PageProduit> {
                                 color: Colors.black12,
                                 blurRadius: 4,
                                 offset: const Offset(0, 3),
-                              )
+                              ),
                             ],
                           ),
-
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
@@ -257,14 +279,12 @@ class _PageProduitState extends State<PageProduit> {
                                 child: ElevatedButton(
                                   onPressed: () {
                                     GestionPanier.ajouterProduit(p);
-
                                     setState(() {});
 
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       const SnackBar(content: Text("Ajouté au panier !")),
                                     );
                                   },
-
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: Colors.black,
                                     padding: const EdgeInsets.symmetric(
