@@ -40,6 +40,35 @@ class _PageConnexionState extends State<PageConnexion> {
           children: [
             const SizedBox(height: 40),
 
+            // LOGO
+            Center(
+              child: Image.asset(
+                'assets/images/logo.png',
+                height: 260,
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            Container(
+              width: double.infinity,
+              color: Colors.black,
+              padding: const EdgeInsets.symmetric(vertical: 12),
+              child: const Center(
+                child: Text(
+                  'CONNEXION',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1,
+                    fontSize: 18,
+                  ),
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
             TextField(
               controller: emailController,
               decoration: const InputDecoration(
