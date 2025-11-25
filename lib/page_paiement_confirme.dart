@@ -46,6 +46,27 @@ class PagePaiementConfirme extends StatelessWidget {
                 color: Colors.grey,
               ),
             ),
+
+            const SizedBox(height: 40),
+
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.black,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 40,
+                  vertical: 14,
+                ),
+              ),
+              child: const Text(
+                "RETOUR À L'ACCUEIL",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            )
           ],
         ),
       ),
