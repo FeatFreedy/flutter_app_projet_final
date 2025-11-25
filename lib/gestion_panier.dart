@@ -1,1 +1,6 @@
+class GestionPanier {
+  static List<Map<String, dynamic>> panier = [];
 
+  static void ajouterProduit(Map<String, dynamic> produit) {
+    panier.add(produit);
+  }
