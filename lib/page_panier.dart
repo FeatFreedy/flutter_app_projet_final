@@ -34,6 +34,15 @@ class _PagePanierState extends State<PagePanier> {
                     ),
                     title: Text(produit["titre"]),
                     subtitle: Text("\$${produit["prix"]}"),
+
+                    trailing: IconButton(
+                      icon: const Icon(Icons.delete, color: Colors.red),
+                      onPressed: () {
+                        setState(() {
+                          GestionPanier.supprimerProduit(index);
+                        });
+                      },
+                    ),
                   ),
                 );
               },
