@@ -26,7 +26,50 @@ class _PageProduitState extends State<PageProduit> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text("Page Produit")),
+      backgroundColor: Colors.white,
+
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Icon(Icons.menu, size: 32),
+                  FlutterLogo(size: 40),
+                  Icon(Icons.shopping_cart, size: 28),
+                ],
+              ),
+
+              SizedBox(height: 20),
+
+              TextField(
+                decoration: InputDecoration(
+                  hintText: "Rechercher une chaussure...",
+                  prefixIcon: Icon(Icons.search),
+                  filled: true,
+                  fillColor: Colors.grey,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(14),
+                    borderSide: BorderSide.none,
+                  ),
+                ),
+              ),
+
+              SizedBox(height: 20),
+
+              Text(
+                "Collection",
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
