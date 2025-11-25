@@ -18,3 +18,7 @@ class GestionPanier {
 
     return total;
   }
+    static void viderPanier() {
+    panier.clear();
+  }
+}
