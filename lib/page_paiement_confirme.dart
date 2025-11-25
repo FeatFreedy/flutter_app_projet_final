@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'page_produit.dart';
+import 'gestion_panier.dart';
 
 class PagePaiementConfirme extends StatelessWidget {
   const PagePaiementConfirme({super.key});
@@ -50,7 +52,17 @@ class PagePaiementConfirme extends StatelessWidget {
             const SizedBox(height: 40),
 
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+
+                GestionPanier.viderPanier();
+
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (_) => const PageProduit()),
+                  (route) => false,
+                );
+              },
+
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.black,
                 padding: const EdgeInsets.symmetric(
