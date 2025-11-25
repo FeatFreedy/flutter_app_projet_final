@@ -40,14 +40,12 @@ class _PageConnexionState extends State<PageConnexion> {
           children: [
             const SizedBox(height: 40),
 
-            // LOGO
             Center(
               child: Image.asset(
                 'assets/images/logo.png',
                 height: 260,
               ),
             ),
-
             const SizedBox(height: 30),
 
             Container(
@@ -66,7 +64,6 @@ class _PageConnexionState extends State<PageConnexion> {
                 ),
               ),
             ),
-
             const SizedBox(height: 30),
 
             TextField(
@@ -76,7 +73,6 @@ class _PageConnexionState extends State<PageConnexion> {
                 border: UnderlineInputBorder(),
               ),
             ),
-
             const SizedBox(height: 20),
 
             TextField(
@@ -88,6 +84,21 @@ class _PageConnexionState extends State<PageConnexion> {
               ),
             ),
 
+            const SizedBox(height: 10),
+
+            Align(
+              alignment: Alignment.centerLeft,
+              child: GestureDetector(
+                onTap: () {},
+                child: const Text(
+                  'Mot de Passe Oublié?',
+                  style: TextStyle(
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ),
             const SizedBox(height: 25),
 
             SizedBox(
@@ -104,6 +115,20 @@ class _PageConnexionState extends State<PageConnexion> {
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 25),
+
+            const Text("Vous n'avez pas de compte?"),
+            GestureDetector(
+              onTap: () {},
+              child: const Text(
+                'INSCRIVEZ-VOUS',
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
