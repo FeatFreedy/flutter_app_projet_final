@@ -1,0 +1,36 @@
+[
+  {
+    "email": "freedy@mail.com",
+    "password": "0123456789",
+    "adresse": {
+      "nom": "Freedy Ebah",
+      "rue": "354 Guelph St",
+      "ville": "Georgetown",
+      "province": "ON",
+      "codePostal": "L7G 4B5"
+    }
+  },
+  {
+    "email": "awa@mail.com",
+    "password": "0123456789",
+    "adresse": {
+      "nom": "Awa",
+      "rue": "120 King St",
+      "ville": "Toronto",
+      "province": "ON",
+      "codePostal": "M5X 1A9"
+    }
+  },
+  {
+    "email": "djaber@mail.com",
+    "password": "0123456789",
+    "adresse": {
+      "nom": "Djaber",
+      "rue": "354 Guelph St",
+      "ville": "Georgetown",
+      "province": "ON",
+      "codePostal": "L7G 4B5"
+    }
+  }
+]
+
